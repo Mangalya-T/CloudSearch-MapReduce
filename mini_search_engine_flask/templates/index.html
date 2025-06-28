@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Search Engine</title>
+    <style>
+        body { font-family: Arial; margin: 30px; }
+        input[type=text] { padding: 8px; width: 300px; }
+        input[type=submit] { padding: 8px 15px; }
+        .result { margin-top: 20px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>Mini Search Engine</h1>
+    <form action ="/search" method="post">
+        <input type="text" name="query" placeholder="Enter word to search" required>
+        <input type="submit" value="Search">
+    </form>
+    {% if result %}
+        <div class="result">{{ result }}</div>
+    {% endif %}
+</body>
+</html>

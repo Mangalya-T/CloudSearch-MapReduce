@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Results for "{{ query }}"</h1>
+    {% if results %}
+        {% for doc, content in results %}
+            <h2>{{ doc }}</h2>
+            <pre style="background-color:#f9f9f9; padding: 10px;">{{ content | safe }}</pre>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+    <a href="/">Search again</a>
+</body>
+</html>
